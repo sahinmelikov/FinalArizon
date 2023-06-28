@@ -1,0 +1,86 @@
+﻿@using FinalArizon.ViewModel;
+
+
+@model ProductUpdateVM
+<div class="card-body">
+    <form class="forms-sample" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" >
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" >
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" >
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DiscountPrice"></label>
+            <input asp-for="DiscountPrice" class="form-control" >
+            <span asp-validation-for="DiscountPrice"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductCode"></label>
+            <input asp-for="ProductCode" class="form-control" >
+            <span asp-validation-for="ProductCode"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Delivery"></label>
+            <input asp-for="Delivery" class="form-control" asp-format="Delivery">
+            <span asp-validation-for="Delivery"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Dimensions"></label>
+            <input asp-for="Dimensions" class="form-control" >
+            <span asp-validation-for="Dimensions"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductQuantity"></label>
+            <input asp-for="ProductQuantity" class="form-control" >
+            <span asp-validation-for="ProductQuantity"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModelId"></label>
+            <select asp-for="ModelId" class="form-control">
+                <option value="">Seçiniz</option>
+                @if (ViewBag.Products != null)
+                {
+                    foreach (SelectListItem product in ViewBag.Products)
+                    {
+                        var modelId = Convert.ToInt32(product.Value);
+                        var models = ViewBag.Models as List<FinalArizon.Models.Model>;
+                        var model = models?.FirstOrDefault(m => m.Id == modelId);
+
+
+                        var parentCategoryName = model != null && model.ParentsCategory != null ? model.ParentsCategory.Name : string.Empty;
+
+                        <option value="@product.Value">@product.Text - @parentCategoryName</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="ModelId"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" class="form-control" >
+            <span asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductColorPhoto"></label>
+            <input asp-for="ProductColorPhoto" class="form-control" >
+            <span asp-validation-for="ProductColorPhoto"></span>
+        </div>
+        
+
+
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button asp-controller="Product" asp-action="Index" class="btn btn-light">Cancel</button>
+    </form>
+</div>

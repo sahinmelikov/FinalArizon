@@ -1,0 +1,46 @@
+﻿@using FinalArizon.ViewModel;
+@model HomeVM
+@{
+    int Count;
+}
+<main>
+    <div class="container">
+        <div class="menu-link">
+            <a asp-controller="Home" asp-action="Index">Ana səhifə / </a>
+            <a>Mega Endirimlər</a>
+        </div>
+        <section class="mt-3 mt-md-4 discount-section3">
+            <div class="text d-flex mb-4">
+                <div class="custom-icon-circle">
+                    <img src="https://www.arizon.az/frontend/image/mega-e.png">
+                </div>
+                <h2>Mega <span style="color: #ff4747!important;">Endirimlər</span></h2>
+            </div>
+            <div class="regular row" id="products-grid">
+                @foreach (var item in Model.Products)
+                {
+                    var discountPercentage = 100 - (item.DiscountPrice * 100 / item.Price);
+                    if (discountPercentage > 20)
+                    {
+                        <a class="discount-slider col-6 col-md-3 col-lg-2 mb-3" asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">
+                            <div class="ds-item">
+                                <div class="img-container">
+                                    <img class="img_main" src="~/RootAllPictures/img/@item.ImagePath">
+                                    <span>
+                                        @{
+                                            Count = (int)discountPercentage;
+                                        }
+                                        @Count%
+                                    </span>
+                                </div>
+                                <div class="net-price">@item.DiscountPrice <span class="icon-azn">M</span></div>
+                                <div class="discount">@item.Price <i class="icon-azn">M</i></div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+            <div class="row"></div>
+        </section>
+    </div>
+</main>

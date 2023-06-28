@@ -1,0 +1,336 @@
+﻿@using FinalArizon.ViewModel;
+
+@model HomeVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    int size = 1;
+    double Count;
+    int a = 100;
+ 
+}
+
+
+@*@{
+    Product product=new Product();
+    double Percent = (100 - (product.DiscountPrice * 100 / product.Price));
+}*@
+
+@{
+    ViewBag.Title = "Sayı Artışı";
+}
+
+<main>
+    <div class="container">
+        <section id="section1">
+            <div class="row m-0">
+                <div class="col-md-3 d-none d-md-block p-0 m-0 pe-2">
+                    <div class="catalog pt-3 ps-2 pe-0">
+                        <p class="catalog_p fw-bold me-2">
+                            <img src="~/frontend/image/catalog.png">
+                            Kataloq
+                        </p>
+                        <nav class="nav flex-column m-0">
+                            <ul class="py-3 home-catalog">
+                                @foreach (var category in Model.ParentsCategories)
+                                {
+                                    <li class="nav-item pt-1">
+                                        <a class="nav-link p-0 m-0 pe-4" asp-controller="Home" asp-action="Category" asp-route-categoryId="@category.Id">
+                                            <img class="p-2" src="~/RootAllPictures/img/@category.ImagePath" width="35px" height="35px">
+                                            @category.Name <i class="fa fa-chevron-right ms-auto"></i>
+                                        </a>
+
+                                        <ul class="chld-container p-2">
+                                            @foreach (var model1 in category.Models)
+                                            {
+                                                <li class="chld-item">
+                                                    @if (model1.Products != null && model1.Products.Any())
+                                                    {
+                                                        // Ürünler var, ID'yi al ve yönlendirme yap
+                                                        <a asp-controller="Home" asp-action="SubCategory" asp-route-modelId="@model1.Id">
+                                                            @model1.Name
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        // Ürün yok, alternatif işlem yapabilirsiniz
+                                                        <span>@model1.Name</span>
+                                                    }
+
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+
+
+
+
+
+                            </ul>
+
+
+                       </nav>
+
+                    </div>
+                </div>
+                <div  class="col-12 col-sm-12 col-lg-7  p-0 m-0 px-2">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner  ">
+                            @foreach (var item in Model.Sliders)
+                            {
+                                <div class="carousel-item @(item.IsActive?"active":"")">
+                                <img class="d-block w-100" src="~/RootAllPictures/img/@item.ImagePath" alt="First slide">
+                            </div>
+                            }
+                          
+                           
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon bg-danger" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon bg-danger" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                        <ul class="slick-dots" style="display: block;" role="tablist">
+                          @for (int i = 0; i < Model.Sliders.Count; i++)
+                            {
+                                <li role="presentation" class="slick-i">
+                                    <button type="button" role="tab" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(Model.Sliders[i].IsActive?"active":"")" tabindex="0" aria-selected="true"></button>
+                           </li>  
+                            }
+                          
+                            </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 d-none d-md-block p-0 m-0 ps-1">
+                    <div class="catalog p-2 py-3 h-100">
+                        <p class="catalog_p fw-bold">
+                            Çox satılanlar
+                        </p>
+                        <div class="best">
+                            @{
+                                var top5Products = Model.Products.OrderByDescending(p => p.ViewCount).Take(5);
+                                foreach (var item in top5Products)
+                                {
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <div class="best_item d-flex py-2">
+                                            <img width="60px" src="~/RootAllPictures/img/@item.ImagePath">
+                                            <div class="text py-1 ps-1">
+                                                <h4>@item.Description</h4>
+                                            </div>
+                                        </div>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section33" class="mt-3 mt-md-4 discount-section3">
+
+            <div class="text d-flex">
+                <div class="custom-icon-circle">
+                    <img src="~/frontend/image/mega-e.png" />
+                </div>
+                <h2>Mega <span style="color: #ff4747!important;">Endirim</span></h2>
+                @if (Model.Products.Any(p => (100 - (p.DiscountPrice * 100 / p.Price)) > 20))
+                {
+                    <a asp-action="MegaEndirimler" class="discount-link ms-auto">Daha Çok</a>
+                }
+            </div>
+
+            <div class="regular overflow-hidden">
+            
+                                @foreach (var item in Model.Products)
+                {
+                    @if ((100 - (@item.DiscountPrice * 100 / item.Price)) > 20  )
+                {
+                        <a class="discount-slider col-6 col-md-3 col-lg-2 " asp-action="Details" asp-route-id="@item.Id">
+                        <div class="ds-item">
+                            <div class="img-container">
+                                <img class="img_main" src="~/RootAllPictures/img/@item.ImagePath">
+                                <span>
+                                  
+                                          
+                                        @{Count = (int)(a - (@item.DiscountPrice * 100 / @item.Price));}
+
+                                  
+                                        @Count%
+                                   
+                              
+                                </span>
+                            </div>
+                            <div class="net-price">@item.DiscountPrice <span class="icon-azn">M</span></div>
+                            <div class="discount">@item.Price <i class="icon-azn">M</i></div>
+                        </div>
+                    </a>
+
+                }
+                }
+    
+
+            </div>
+        </section>
+        <section id="section3" class="mt-3 mt-md-4 discount-section3">
+            <div class="text d-flex">
+                <div class="custom-icon-circle">
+                    <img src="~/frontend/image/endirim.png" />
+                </div>
+                <h2>Endirimlər</h2>
+                @if (Model.Products.Any(p =>(100 - (p.DiscountPrice * 100 / p.Price)) < 20))
+                {
+                    <a asp-action="Endirimler" class="discount-link ms-auto">Daha Çok</a>
+                }
+            </div>
+            <div class="regular overflow-hidden">
+             
+                              @foreach (var item in Model.Products)
+                {
+                    @if ((100 - (@item.DiscountPrice * 100 / item.Price)) < 20 && (100 - (@item.DiscountPrice * 100 / item.Price))>0)
+                    {
+                        <a asp-action="Details" asp-route-id="@item.Id" class="discount-slider col-6 col-md-3 col-lg-2 " >
+                        <div class="ds-item">
+                            <div class="img-container">
+                                <img class="img_main" src="~/RootAllPictures/img/@item.ImagePath">
+                                <span>
+
+                                    @{
+                                        Count = (int)(a - (@item.DiscountPrice * 100 / @item.Price));
+                                    }
+
+
+                                    @Count%
+
+                                </span>
+                            </div>
+                            <div class="net-price">@item.DiscountPrice <span class="icon-azn">M</span></div>
+                            <div class="discount">@item.Price <i class="icon-azn">M</i></div>
+                        </div>
+                    </a>
+                }
+                }
+
+                
+      
+
+            </div>
+        </section>
+
+        
+        <section id="section5">
+            <h4 class="section5_title">Mağazanın digər məhsulları</h4>
+            <div class="advice">
+                <div class="row" id="services">
+@*                    @foreach (var item in Model.Products)
+                    {
+                        <div class="col-6 col-sm-3 col-lg-2 px-1">
+                            <div class="adivice_title">
+                                <a asp-action="Details" asp-route-id="@item.Id" target="_blank">
+                                    <div class="img img-container" style="position: relative;">
+                                        <img class="w-100" src="~/RootAllPictures/img/@item.ImagePath" />
+                                        <div class="stamp__container">
+                                        </div>
+                                    </div>
+                                    <p class="name">
+                                        @item.Name
+                                    </p>
+                                    <div class="discount_percent">
+                                        <span>
+                                            @{
+                                                Count = (int)(a - (@item.DiscountPrice * 100 / @item.Price));
+                                            }
+                                            @Count %
+                                        </span>
+                                    </div>
+                                    <p class="price">
+                                        @item.DiscountPrice <i class="icon-azn">M</i>
+                                        <del style="text-decoration: line-through; opacity: .5;">
+                                            @item.Price <i class="icon-azn">M</i>
+                                        </del>
+                                    </p>
+
+                                    <p class="wiew">
+                                        Sayı:@item.ViewCount
+                                    </p>
+                                </a>
+                                <div class="add text-end">
+                                    <div class="row align-items-center m-0 text-center">
+                                        <div class="col-7"></div>
+                                        <form action="https://www.arizon.az/add-to-cart" method="post" class="col-5 p-0 add-to-cart d-flex justify-content-end">
+                                            <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <input type="hidden" name="product_id" value="701">
+                                            <button asp-controller="Basket" asp-action="AddBasket" asp-route-id="@item.Id" type="submit" class="btn artir"><img src="~/frontend/image/sebet.png" /></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }*@
+
+
+
+                    <partial name="_ProductPartialView" model="Model" />
+
+                    
+                </div>
+            </div>
+            <div class="more text-center mt-5 " data-page="2">
+
+                <button id="btnLoadMore">Davamı</button>
+            </div>
+
+            </section>
+
+    </div>
+</main>
+@*<script>
+    $(document).ready(function () {
+        $("#btnLoadMore").on("click", function () {
+            console.log("Ok");
+        });
+    });
+</script>*@
+<script>
+    //const Basket_text = document.querySelector(".basket")
+    //const ChoseSubMenu2 = document.querySelector(".choose-submenu2")
+
+    //Basket_text.addEventListener("click", function () {
+
+    //    ChoseSubMenu2.classList.toggle('d-none')
+    //})
+
+
+
+    let sayi = 0;
+
+    // Butona tıklandığında çalışacak fonksiyon
+    function artir() {
+        // Sayıyı bir artırıyoruz
+        sayi++;
+
+        // HTML'deki p elementini seçip sayıyı güncelliyoruz
+        document.querySelector(".sayi").innerHTML = sayi;
+    }
+
+    // Butonu seçip tıklama olayını dinliyoruz
+    document.querySelector(".artir").addEventListener("click", artir);
+
+</script>
+<script src="~/js/custom.js"></script>
+@*<script>
+
+    let wiew = 0
+    function down() {
+        wiew++
+        document.querySelector(".wiew").innerHTML = wiew
+    }
+    document.querySelector(".down").addEventListener("click", down)
+</script>*@

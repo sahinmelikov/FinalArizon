@@ -1,0 +1,59 @@
+﻿@using FinalArizon.ViewModel;
+ @model HomeVM
+@{
+    double Count;
+}
+
+
+        @foreach (var item in Model.Products)
+        {
+            <div class="col-6 col-sm-3 col-lg-2 px-1">
+                <div class="adivice_title">
+                    <a asp-action="Details" asp-route-id="@item.Id" target="_blank">
+                        <div class="img img-container" style="position: relative;">
+                            <img class="w-100" src="~/RootAllPictures/img/@item.ImagePath" />
+                            <div class="stamp__container">
+                            </div>
+                        </div>
+                        <p class="name">
+                            @item.Name
+                        </p>
+                        <div class="discount_percent">
+                            <span>
+                                @{
+                                    Count = (int)(100 - (@item.DiscountPrice * 100 / @item.Price));
+                                }
+                                @Count %
+                            </span>
+                        </div>
+                        <p class="price">
+                            @item.DiscountPrice <i class="icon-azn">M</i>
+                            <del style="text-decoration: line-through; opacity: .5;">
+                                @item.Price <i class="icon-azn">M</i>
+                            </del>
+                        </p>
+
+                        <p class="wiew">
+                            Sayı:@item.ViewCount
+                        </p>
+                    </a>
+                    <div class="add text-end">
+                        <div class="row align-items-center m-0 text-center">
+                            <div class="col-7"></div>
+                            <form action="https://www.arizon.az/add-to-cart" method="post" class="col-5 p-0 add-to-cart d-flex justify-content-end">
+                                <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <input type="hidden" name="product_id" value="701">
+                                <button asp-controller="Basket" asp-action="AddBasket" asp-route-id="@item.Id" type="submit" class="btn artir"><img src="~/frontend/image/sebet.png" /></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+
+
+
+
+

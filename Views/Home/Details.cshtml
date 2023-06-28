@@ -1,0 +1,785 @@
+﻿@using FinalArizon.ViewModel;
+
+@using System.IO;
+@model HomeVM
+
+@*@{
+    // List<Product> nesnesini elde edin
+    List<Product> productList = ViewBag.ProductList; // Örneğin, ViewBag üzerinden productList'i alıyoruz
+}*@
+
+@{
+    int size = 1;
+    double Count;
+    int a = 100;
+
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Sürət Ayarlı RAF Çoxfunksiyalı Şüşə Blender 1000W Gücündə Professional Gold Mətbəx Blenderi 1.5L | Azərbaycanın Online Alışveriş Saytı Arizon.az</title>
+    <meta http-equiv="content-language" content="az">
+    <meta name="csrf-token" content="qzOyqDaMGCkeBUUl3ncPqwsaawwi2YIEO2Da1fFL">
+    <script src="https://connect.facebook.net/signals/config/1069280496971507?v=2.9.107&amp;r=stable" async=""></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M6SW0029PZ"></script>
+    <script src="/cdn-cgi/apps/head/Gd6MZLBdeI8JqGMYwGDOkaXYMCo.js"></script>
+    <script src="/cdn-cgi/apps/body/jGne5cau_lIMzRxflYgMAg_3bzw.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://www.arizon.az/favicon.ico">
+    <meta name="theme-color" content="#232f3e">
+    <meta name="description" content="Bu çoxfunksiyalı blender sayəsində siz ondan şirə, soya südü...">
+    <meta name="keywords" content="webservice.az,arizon, arizon az, masaj aparati, online alisveris, arizon market, idman mallari, agilli ev aletleri">
+    <meta name="robots" content="index, follow">
+    <meta property="og:url" content="https://www.arizon.az/az/product/1333/3-suret-ayarli-raf-coxfunksiyali-suse-blender-1000w-gucunde-professional-gold-metbex-blenderi-15l">
+    <meta property="og:type" content="ecommerce">
+    <meta property="og:title" content="3 Sürət Ayarlı RAF Çoxfunksiyalı Şüşə Blender 1000W Gücündə Professional Gold Mətbəx Blenderi 1.5L">
+    <meta property="og:description" content="Bu çoxfunksiyalı blender sayəsində siz ondan şirə, soya südü...">
+    <meta property="og:image" content="https://www.arizon.az/storage/photos/melek2023/Blenderraf/H2231736fbd7f45f99099e4f20b15ce942.jpg_960x960.jpg">
+    <meta name="twitter:title" content="3 Sürət Ayarlı RAF Çoxfunksiyalı Şüşə Blender 1000W Gücündə Professional Gold Mətbəx Blenderi 1.5L">
+    <meta name="twitter:description" content="Bu çoxfunksiyalı blender sayəsində siz ondan şirə, soya südü...">
+    <meta name="twitter:image" content="https://www.arizon.az/storage/photos/melek2023/Blenderraf/H2231736fbd7f45f99099e4f20b15ce942.jpg_960x960.jpg">
+    <meta name="twitter:card" content="summary">
+    <link href="https://www.arizon.az/frontend/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/plugins/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/main.css?v29" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/style.css?v29" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/mega-menu.css?v29" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/responsive.css?v29" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/plugins/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/plugins/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/plugins/fontawesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://www.arizon.az/frontend/css/mobile.css?v29" rel="stylesheet" type="text/css">
+
+    <link href="https://www.arizon.az/frontend/wpchatplugin/wpchat.css" rel="stylesheet">
+    <link href="https://www.arizon.az/frontend/wpchatplugin/wpchatcustom.css" rel="stylesheet">
+    <style>
+        .slick-slide .d-none {
+            display: inline-block !important;
+        }
+
+        .slider-nav-thumbnails {
+            margin-top: 5px;
+            border: 2px solid transparent !important;
+        }
+
+            .slider-nav-thumbnails .slick-current {
+                border: 2px solid #ff8a01 !important;
+            }
+
+            .slider-nav-thumbnails .slick-slide, .zoom {
+                cursor: pointer;
+                outline: none;
+            }
+
+                .slider-nav-thumbnails .slick-slide.slick-current.slick-active {
+                    opacity: 1;
+                }
+
+                .slider-nav-thumbnails .slick-slide img {
+                    background: transparent;
+                    ;
+                }
+
+                .slider-nav-thumbnails .slick-slide.slick-current.slick-active img {
+                    background: #000;
+                }
+
+            .slider-nav-thumbnails img {
+                height: 75px;
+                object-fit: cover;
+            }
+
+            .slider-nav-thumbnails .slick-slide:first-child img {
+                margin-left: 0;
+            }
+
+            .slider-nav-thumbnails .slick-slide:last-child img {
+                margin-right: 0;
+            }
+
+            .slider-nav-thumbnails .slick-arrow {
+                display: none !important;
+            }
+
+        .about-product > * {
+            color: #787878;
+            line-height: 21px;
+            font-size: 13px;
+        }
+
+        .about-product p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .topsale-item .text b {
+            font-size: 17px;
+        }
+
+        .topsale-item .text span {
+            font-size: 12px;
+        }
+
+            .topsale-item .text span i {
+                opacity: .5;
+            }
+
+        .topsale-item img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .wrrnty-content {
+            padding: 10px 5px;
+            font-family: Arial;
+        }
+
+        .wrrnty-title {
+            font-size: 18px;
+            padding: 0px 5px;
+        }
+
+        .wrrnty-content img {
+            filter: invert(1);
+            margin-right: 7px;
+        }
+
+        .wrrnty-content > * {
+            font-size: 12px;
+            color: #2d2f43;
+        }
+    </style>
+
+    <script type="text/javascript">
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1069280496971507');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1069280496971507&ev=PageView&noscript=1" />
+    </noscript>
+
+    <link rel="stylesheet" href="https://code.jivosite.com/css/097d087/widget.css" class="jv-css">
+</head>
+<main>
+    <div class="detail-page">
+        <div class="container">
+            <div class="menu-link">
+                <a asp-controller ="Home" asp-action="Index">
+                    Ana səhifə / </a>
+                
+                <a>ssd</a>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-10">
+                    <div class="row">
+
+                       
+                        @if (ViewBag.SelectedProduct != null)
+                        {
+                        <div class="col-12 col-lg-6 position-relative">
+                            <div class="stamp__container" style="z-index: 9; left: 23px;">
+                                <span class="delivery-product">Pulsuz çatdırılma</span>
+                            </div>
+                                <img src="~/RootAllPictures/img/@ViewBag.SelectedProduct.ImagePath" class="w-100">
+                                   <div class="images-slider slick-initialized slick-slider">
+                                <div class="slick-list draggable">
+                                           <div class="slick-track" style="opacity: 1; width: 7395px; transform: translate3d(-2958px, 0px, 0px);">
+                                
+                                        <div class="slick-slide slick-current " data-slick-index="5" aria-hidden="false" style="width: 483px;">
+                                         ddd   <div>
+                                                <div class="zoom pro-zoom  d-none " style="width: 100%; display: inline-block; position: relative; overflow: hidden;">
+                                                    <a href="https://www.arizon.az/storage/photos/melek2023/qazan/H3598d312894c4073b49bc78a3649e16bd.jpg_960x960.jpg" tabindex="0">
+                                                        <img src="https://www.arizon.az/storage/photos/melek2023/qazan/H3598d312894c4073b49bc78a3649e16bd.jpg_960x960.jpg" class="w-100">
+                                                    </a>
+                                                    <img role="presentation" alt="" src="https://www.arizon.az/storage/photos/melek2023/qazan/H3598d312894c4073b49bc78a3649e16bd.jpg_960x960.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 800px; height: 800px; border: none; max-width: none; max-height: none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div> 
+                                    
+                                
+                                </div>
+                            </div>
+                            <div class="slider-nav-thumbnails slick-initialized slick-slider">
+                                <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: inline-block;">Previous</button><div class="slick-list draggable">
+                                    <div class="slick-track" style="opacity: 1; width: 35000px; transform: translate3d(-855px, 0px, 0px);">
+                                   
+                                        <div class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1">
+                                            <div>
+                                                <div class="" style="width: 100%; display: inline-block;">
+                                                    <img src="https://www.arizon.az/storage/photos/melek2023/qazan/H7352421186b0416f8ff9ae9481923e37m.jpg_960x960.jpg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1">
+                                            <div>
+                                                <div class=" d-none " style="width: 100%; display: inline-block;">
+                                                    <img src="https://www.arizon.az/storage/photos/melek2023/qazan/H50e95ab71d494c15af87d816dad35100c.jpg_960x960.jpg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;">Next</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="slider-detail-text">
+                                    <h3>@ViewBag.SelectedProduct.Description</h3>
+                                <div class="endirim">
+                                    <div class="time">
+                                        <span class="w-60">Endirimli qiyməti:</span>
+                                        <span class="w-40">Bitməsinə:</span>
+                                    </div>
+                                    <div class="faiz">
+                                        <span class="w-60">
+                                                <del style="text-decoration: line-through;">@ViewBag.SelectedProduct.Price<i class="icon-azn">M</i></del>
+                                                @ViewBag.SelectedProduct.DiscountPrice<i class="icon-azn">M</i>
+                                                @{
+                                                    Count = (int)(a - (ViewBag.SelectedProduct.DiscountPrice * 100 / ViewBag.SelectedProduct.Price));
+                                                }
+
+
+                                                @Count%
+                                        </span>
+                                        <span class="w-40">28 gün 4 saat</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                    <p class="d-inline-block delivery">Məhsul kodu:</p> <div class="olke"> @ViewBag.SelectedProduct.ProductCode </div><br>
+                                <p class="d-inline-block delivery">Çatdırılma:</p> <div class="olke"> @ViewBag.SelectedProduct.Delivery </div><br>
+                                <form action="https://www.arizon.az/add-to-cart" method="post" class="add-to-cart" id="details-add-to-cart-form">
+                                    <input type="hidden" name="_token" value="FkPyBIZ4HUHBGX1AfGedMLaArTKDqXarcrYto8Dv"> <input type="hidden" name="product_id" value="1292">
+                                        <p class="d-inline-block delivery">Ölçülər:@ViewBag.SelectedProduct.Dimensions</p>
+                                    <div class="size d-inline-flex flex-wrap">
+                                            <input type="radio" id="size694" class="d-none" name="data[size][]" value="@ViewBag.SelectedProduct.Dimensions" checked="">
+                                            <label class="size-item active" for="size694">@ViewBag.SelectedProduct.Dimensions</label>
+                                    </div><br>
+                                    <p class="d-inline-block delivery">Rənglər:</p>
+                                  
+                                            <div class="color d-inline-flex flex-wrap">
+                                            <input type="radio" id="color448" class="d-none" name="data[color][]" value="" checked="">
+                                        <label class="overflow-hidden color-item " for="color448">
+
+
+                                                @foreach (var color in ViewBag.SelectedProduct.ProductİmageColor)
+                                                {
+                                                    var imageUrl = $"~/RootAllPictures/img/{color}";
+                                                    <img src="@Url.Content(imageUrl)" class="w-100 h-100" title="@color">
+                                                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </label>
+                                    </div><br> 
+                                        
+                                   
+                                    <p class="d-inline-block delivery">Miqdarı:</p>
+                                    <div class="miqdar">
+                                        <div class="button input">
+                                            <button type="button" class="dec" disabled="">-</button>
+                                                <input type="text" name="quantity" value="1" readonly="">
+                                            <button type="button" class="inc">+</button>
+                                        </div>
+                                            <p>Anbarda @ViewBag.SelectedProduct.ProductQuantity ədəd var</p>
+                                    </div>
+                                </form>
+                                <div class="d-flex mt-3">
+                                    <button class="buynow" data-url="https://www.arizon.az/az/cart/get-list">İndi al</button>
+                                        <a asp-controller="Basket" asp-action="AddBasket" asp-route-id="@ViewBag.SelectedProduct.Id" type="submit" form="details-add-to-cart-form" class="addbasket">Səbətə əlavə et</a>
+                                </div>
+                            </div>
+                        </div>}
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-12 col-sm-6 col-lg-2">
+                    <h3 class="topsale_title text-center">Çox satılanlar</h3>
+                    @{
+                        var top5Products = Model.Products.OrderByDescending(p => p.ViewCount).Take(5);
+                        foreach (var item in top5Products)
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                <div class="topsale-item">
+                                    <img height="170px" src="~/RootAllPictures/img/@item.ImagePath">
+                                    <div class="text">
+                                        <b>@item.DiscountPrice <span class="icon-azn">M</span></b>
+                                        <span><i class="fa fa-eye"></i> @item.ViewCount</span>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    
+                    }
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-page-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4 col-lg-2 d-none d-md-block">
+                    <div class="categories">
+                        <h3>Kateqoriyalar</h3>
+                        <hr class="mb-0 mt-1">
+                        <div class="category-menu">
+                            <ul class="nav nav-list w-100">
+                                @foreach (var item in Model.ParentsCategories)
+                                {
+                                 
+                                    <li class="accordion-item w-100">
+                                        <label class="tree-toggler accordion-button">@item.Name</label>
+                                    @foreach (var item1 in item.Models)
+                                        {
+                                             <ul class="nav nav-list tree accordion-body" style="display: none;">
+                                                <a asp-controller="Home" asp-action="SubCategory" asp-route-modelId="@item1.Id">
+                                                <li> @item1.Name</li>
+                                                   
+                                                </a>
+                                    </ul>
+                                        }
+                                   
+                                </li>
+                                }
+                               
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="categories">
+                        <h3>Endirimlər</h3>
+                        <hr>
+                        <div class="fltrs-wrppr hide-fltrs"><div class="fltr-cntnr-ttl-area">
+                            <div class="fltr-cntnr-ttl">Qiymet</div>
+                            <div class="i-dropdown-arrow transform"></div>
+                        </div><div><div class="fltr-srch-prc-rng"><input type="button" class="fltr-srch-prc-rng-input min" placeholder="En Az"><span class="fltr-srch-prc-rng-sprtr">-</span><input type="button" class="fltr-srch-prc-rng-input max" placeholder="En Çok"><button class="fltr-srch-prc-rng-srch" disabled=""></button></div></div><div class="fltrs"><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=0-50&amp;os=1"><div class="radio-button"></div>
+                            <div class="fltr-item-text">0Azn - 50 Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=50-200&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">50Azn - 200Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=200-250&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">200Azn - 250Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=250-400&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">250Azn - 400Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=400-900&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">400Azn - 900Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=900-2500&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">900Azn - 2500Azn</div></a></div><div class="aggregation-seperator"><span></span></div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-10">
+                    <div class="tabs">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active p-0 " id="product-about-tab" data-toggle="tab" href="#product-about" role="tab" aria-controls="product-about" aria-selected="true">Məhsul haqqında</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="about-product tab-pane fade show active p-2" id="product-about" role="tabpanel" aria-labelledby="product-about-tab">
+                                @if (ViewBag.SelectedProduct != null)
+                                {
+                                    <div>Məhsul növü: @ViewBag.SelectedProduct.Name</div>
+
+                                    @if (ViewBag.SelectedProduct.Features != null && ViewBag.SelectedProduct.Features.Count > 0)
+                                    {
+                                        var firstFeature = ViewBag.SelectedProduct.Features[0];
+                                        <div>About Product: @firstFeature.AboutProduct</div>
+                                        <div>Brend: @firstFeature.BrandName</div>
+                                        <div>Model: @firstFeature.ModelName</div>
+                                        <div>Nominal gərginlik/tezlik: @firstFeature.Tension</div>
+                                        <div>Faktiki həcm: @firstFeature.Vol</div>
+                                        <div>Ölçüsü: @firstFeature.Size</div>
+                                        <div>Vahid Çəki: @firstFeature.Weight</div>
+                                        <div>Rəng: @ViewBag.SelectedProduct.ProductİmageColor</div>
+                                    }
+                                    else
+                                    {
+                                        <div>Rəng: @ViewBag.SelectedProduct.ProductİmageColor</div>
+                                    }
+                                }
+
+
+
+
+                                <div><br></div>
+                                <div>Qeyd: Fərqli ekran və kamera işıqları səbəbindən məhsullarda cüzi rəng fərqləri ola bilər. Anlayışınız üçün təşəkkür edirik!</div>
+                                <div>Zəhmət olmasa, əl ilə ölçmə səbəbindən 1-2 sm səhvlik ola biləcəyini unutmayın və sifariş verməzdən əvvəl etiraz etmədiyinizə əmin olun!</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <section class="tabs">
+                        <div class="wrrnty-title">Zəmanət</div>
+                        <div class="wrrnty-content">
+                            <p><img height="24px" width="24px" src="https://resources.joomcdn.net/warranty/not_delivered.png" style="height: 24px; width: 24px;"> Saytdan sifariş verdiyiniz məhsullar "48 SAAT" ərzində əməkdaşlarımız tərəfindən ünvanınıza "PULSUZ" çatdırılacaq.</p>
+                            <p><img height="24px" width="24px" src="https://resources.joomcdn.net/warranty/warranty.png" style="height: 24px; width: 24px;"> Sifariş etdiyiniz məhsulun ödənişini "NAĞD" şəkildə məhsul sizə gətirildikdən sonra edə bilərsiniz.</p>
+                            <p><img height="24px" width="24px" src="https://resources.joomcdn.net/warranty/refund.png" style="height: 24px; width: 24px;"> Müştəri sifarişdən "İMTİNA" barədə mütləq əvvəlcədən xəbər verməlidir.</p>
+                        </div>
+                    </section>
+                    <section id="section5">
+                        <h4 class="section5_title">Oxşar məhsullar</h4>
+                        <div class="advice">
+                            <div class="row">
+                                @if (ViewBag.SameProductCodeProducts != null && ViewBag.SameProductCodeProducts.Count > 0)
+                                {
+                                    foreach (var product in ViewBag.SameProductCodeProducts)
+                                    {
+
+                                                <div class="col-6 col-sm-4 col-lg-25 px-0">
+                                                    <div class="adivice_title">
+                                                <a asp-action="Details" asp-route-id="@product.Id" target="_blank">
+                                                            <div class="img img-container" style="position: relative;">
+                                                                <img class="w-100" src="~/RootAllPictures/img/@product.ImagePath">
+                                                                <div class="stamp__container">
+                                                                    <span class="new-product">YENİ</span>
+                                                                </div>
+                                                            </div>
+                                                            <p class="name" title="Elektrikli Qril RAF Tüstüsüz Barbekü Maşını 2000W Gücə Məxsus Qapalı Barbekü Masası 220V Temperatur Nəzarəti Elektrikli Manqal">@product.Description</p>
+                                                            <div class="discount_percent">
+                                                            </div>
+                                                            <p class="price">
+                                                               @product.Price <i class="icon-azn">M</i>
+                                                            </p>
+                                                            <p class="wiew">@product.ViewCount  Baxilib</p>
+                                                        </a>
+                                                        <div class="add text-end">
+                                                            <div class="row align-items-center m-0 text-center">
+                                                                <div class="col-7"></div>
+                                                                <form action="https://www.arizon.az/add-to-cart" method="post" class="col-5 p-0 add-to-cart d-flex justify-content-end">
+                                                                    <input type="hidden" name="_token" value="FkPyBIZ4HUHBGX1AfGedMLaArTKDqXarcrYto8Dv"> <input type="hidden" name="product_id" value="1273">
+                                                            <a asp-controller="Basket" asp-action="AddBasket" asp-route-id="@product.Id" type="submit" class="btn"><img src="https://www.arizon.az/frontend/image/sebet.png"></a>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                
+                            </div>
+                        </div>
+                    </section>
+                    <section id="section5">
+                        <h4 class="section5_title">Mağazanın digər məhsulları</h4>
+                        <div class="advice">
+                            <div class="row">
+                                @foreach (var item in Model.Products)
+                                {
+                                                                    <div class="col-6 col-sm-4 col-lg-25 px-0">
+                                    <div class="adivice_title">
+                                            <a asp-action ="Details" asp-route-id="@item.Id" target="_blank">
+                                            <div class="img img-container" style="position: relative;">
+                                                <img class="w-100" src="~/RootAllPictures//img/@item.ImagePath">
+                                                <div class="stamp__container">
+                                                    <span class="new-product">YENİ</span>
+                                                </div>
+                                            </div>
+                                            <p class="name" title="Çoxfunksiyalı Elektrikli Ətçəkən Maşın Haeger 2000W Gücə Məxsus Ət Maşını Elektrikli Kolbasa Doldurma Maşını">@item.Name</p>
+                                            <div class="discount_percent">
+                                                    <span>
+                                                        @{
+                                                            Count = (int)(a - (ViewBag.SelectedProduct.DiscountPrice * 100 / ViewBag.SelectedProduct.Price));
+                                                        }
+
+
+                                                        @Count%
+                                                    </span>
+                                            </div>
+                                            <p class="price">
+                                                @item.DiscountPrice <i class="icon-azn">M</i>
+                                                <del style="text-decoration: line-through; opacity: .5;">
+                                                        @item.Price <i class="icon-azn">M</i>
+                                                </del>
+                                            </p>
+                                            <p class="wiew">@item.ViewCount  Baxış</p>
+                                        </a>
+                                        <div class="add text-end">
+                                            <div class="row align-items-center m-0 text-center">
+                                                <div class="col-7"></div>
+                                                <form action="https://www.arizon.az/add-to-cart" method="post" class="col-5 p-0 add-to-cart d-flex justify-content-end">
+                                                    <input type="hidden" name="_token" value="FkPyBIZ4HUHBGX1AfGedMLaArTKDqXarcrYto8Dv"> <input type="hidden" name="product_id" value="1211">
+                                                        <a asp-controller="Basket" asp-action="AddBasket" asp-route-id="@item.Id" type="submit" class="btn"><img src="https://www.arizon.az/frontend/image/sebet.png"></a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+
+                           
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<style>
+    form#costumer-register-form i {
+        cursor: pointer;
+        position: absolute;
+        top: 30%;
+        font-size: 19px;
+        color: #9b9b9b;
+        right: 5%;
+    }
+
+    .button {
+        box-shadow: none !important;
+    }</style>
+
+<div class="modal fade" id="odenis1" tabindex="-1" role="dialog" aria-labelledby="qeydiyyatTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content change-password text-center">
+            <div class="text-end">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h5 class="change-password-title" id="girisTitle">Arizon-a ilk dəfə daxil olursunuz? Zəhmət olmasa şəxsi məlumatlarınızı daxil edin.</h5>
+            <hr>
+            <div class="modal-body">
+                <div class="d-flex pay align-items-center">
+                    <p class>Artıq bir hesabınız var mı? Daxil olun</p>
+                    <div class="social-pay d-flex">
+                        <a href="https://www.arizon.az/user/auth/facebook/redirect" class="button fb"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.arizon.az/user/auth/google/redirect" class="button google"><i class="bi bi-google"></i></a>
+                        <div class="button gmail" data-toggle="modal" data-target="#daxilol"><i class="bi bi-envelope-fill"></i></div>
+                    </div>
+                </div>
+                <div class="d-none align-items-center justify-content-center" id="login-without-pass-loader">
+                    <i class="fs-3 fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                </div>
+                <form action="https://www.arizon.az/user/register/from/cart" method="post" id="cart-user-register">
+                    <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <div class="form-floating mb-3">
+                        <input type="text" class="form-control my-3 p-0 px-3" name="name" id="o-register-name">
+                        <label for="o-register-name">Ad Soyad</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control my-3 p-0 px-3" name="email" id="o-register-mail">
+                        <label for="o-register-mail">E-mail</label>
+                    </div>
+                    <p class="condition">Davam etməklə mən <a href="https://www.arizon.az/az/page/terms" target="_blank">İstifadə Şərtlərini</a> və <a href="https://www.arizon.az/az/page/privacy" target="_blank">Məxfilik Siyasətini </a> qəbul edirəm</p> <button class="button _signup w-100">Yadda saxla</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="daxilol" tabindex="-1" role="dialog" aria-labelledby="daxilolTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content change-password text-center">
+            <div class="d-flex justify-content-space-between">
+                <button type="button" class="close" data-toggle="modal" data-target="#giris" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&#8592;</span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h5 class="change-password-title" id="girisTitle">Daxil ol</h5>
+            <img src="https://www.arizon.az/frontend/image/login.png" height="120px" width="120px" class="m-auto" />
+            <h5 class="change-password-title" id="girisTitle">
+                Sifariş tarixçənizi saxlamaq üçün <br> daxil olun
+            </h5>
+            <div class="modal-body">
+                <form action="https://www.arizon.az/send-sms" method="post" id="verification-login-form">
+                    <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <div class="form-floating w-75 mx-auto mb-3">
+                        <input type="text" class="form-control text-center my-3 p-0 px-3" id="vc-phone" name="phone_number" autocomplete="false">
+                        <label for="vc-phone">Telefon</label>
+                    </div>
+                    <button type="submit" class="button _signup">Daxil ol</button>
+                </form>
+                <div class="other">
+                    <hr><span>Digər girişlər</span><hr>
+                </div>
+                <div class="social">
+                    <a href="https://www.arizon.az/user/auth/facebook/redirect" class="fb">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.arizon.az/user/auth/google/redirect" class="google">
+                        <i class="bi bi-google"></i>
+                    </a>
+                </div> <p class="condition">Davam etməklə mən <a href="https://www.arizon.az/az/page/terms" target="_blank">İstifadə Şərtlərini</a> və <a href="https://www.arizon.az/az/page/privacy" target="_blank">Məxfilik Siyasətini </a> qəbul edirəm</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="qeydiyyat" tabindex="-1" role="dialog" aria-labelledby="qeydiyyatTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content change-password text-center">
+            <div class="d-flex justify-content-space-between">
+                <button type="button" class="close" data-toggle="modal" data-target="#giris" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&#8592;</span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h5 class="change-password-title mb-3" id="girisTitle">Qeydiyyat</h5>
+            <img src="https://www.arizon.az/frontend/image/login.png" height="120px" width="120px" class="m-auto" />
+            <h5 class="change-password-title" id="girisTitle">
+                Qeydiyyat məlumatlarınızı daxil edin
+            </h5>
+            <div class="modal-body">
+                <form action="https://www.arizon.az/user/register" method="post" id="costumer-register-form">
+                    <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <div class="form-floating mb-3">
+                        <input type="text" class="form-control my-3 p-0 px-3" name="name" id="register-name">
+                        <label for="register-name">Ad Soyad</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control my-3 p-0 px-3" name="email" id="register-mail">
+                        <label for="register-mail">E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control my-3 p-0 px-3" name="password" id="register-password">
+                        <label for="register-password">Şifrə</label>
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control my-3 p-0 px-3" name="comfirm_password" id="register-confirm">
+                        <label for="register-confirm">Təkrar şifrə</label>
+                        <i class="bi bi-eye-slash" id="togglePasswordConfirm"></i>
+                    </div>
+                    <button type="submit" class="button _signup">Qeydiyyat</button>
+                </form>
+                <div class="other">
+                    <hr><span>Digər girişlər</span><hr>
+                </div>
+                <div class="social">
+                    <a href="https://www.arizon.az/user/auth/facebook/redirect" class="fb">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.arizon.az/user/auth/google/redirect" class="google">
+                        <i class="bi bi-google"></i>
+                    </a>
+                </div> <p class="condition">Davam etməklə mən <a href="https://www.arizon.az/az/page/terms" target="_blank">İstifadə Şərtlərini</a> və <a href="https://www.arizon.az/az/page/privacy" target="_blank">Məxfilik Siyasətini </a> qəbul edirəm</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="qeydiyyatTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content change-password text-center">
+            <div class="modal-header">
+                <h5 class="modal-title">Məhsul seçilməyib</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="https://www.arizon.az/frontend/image/select.png">
+                <p class="condition mb-3 text-center">Sifarişi tamamlamaq üçün səbətdən bir və ya bir neçə məhsul seçin.</p>
+                <button type="button" class="button-bg w-100 p-3" data-dismiss="modal" aria-label="Close">Bağla</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="verification" tabindex="-1" role="dialog" aria-labelledby="verificationTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content change-password text-center">
+            <div class="d-flex justify-content-space-between">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h5 class="change-password-title" id="vTitle">Təsdiq kodunu daxil edin</h5>
+            <div class="modal-body">
+                <form action="https://www.arizon.az/check-code" method="post" id="verification-code-form">
+                    <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt"> <div class="form-floating w-75 mx-auto mb-3">
+                        <input type="text" class="form-control my-3 p-0 px-3" id="dis-phone" name="phone" readonly>
+                        <label for="dis-phone">Telefon</label>
+                    </div>
+                    <div class="form-floating w-75 mx-auto mb-3">
+                        <input type="text" class="form-control my-3 p-0 px-3" id="user-name" name="username">
+                        <label for="user-name">İstifadəçi adı</label>
+                    </div>
+                    <div class="form-floating w-75 mx-auto mb-3">
+                        <input type="text" class="form-control my-3 p-0 px-3" id="vc-code" name="verification_code" placeholder="______">
+                        <label for="vc-code">Təsdiq kodu</label>
+                        <small class="resend text-danger" data-url="https://www.arizon.az/resend-sms" data-token="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt">Təsdiq kodunu yenidən göndər</small>
+                    </div>
+                    <button type="submit" class="button _signup">Davam et</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="product-temp-for-cart">
+    <div class="product d-flex p-2">
+        <div class="img">
+            <img src="::photo::" height="60px">
+        </div>
+        <div class="detail px-1">
+            <div class="d-info">
+                <p class="price pb-2"> ::price:: <i class="icon-azn">M</i> / x::qty::</p>
+                <p class="name">::name::</p>
+            </div>
+            <form action="https://www.arizon.az/remove-from-cart" method="post">
+                <input type="hidden" name="_token" value="M85N5au8EFw5fIHoVDq1Xt78R8PfgeUVuUse8pdt">                    <input type="hidden" name="_method" value="DELETE">                    <input type="hidden" name="id" value="::product_id::">
+                <input type="hidden" name="rfc" value="home_busket_item">
+                <button type="submit" class="rmv-product"><i class="fa-regular fa-trash-can"></i></button>
+            </form>
+        </div>
+    </div>
+</script>
+<div id="ohsnap"></div>
+<script src="https://www.arizon.az/frontend/js/jquery-2.2.0.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/popper/popper.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/plugins/bootstrap/dist/js/bootstrap.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/plugins/bootstrap4/bootstrap.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/plugins/slick/slick.js" type="518d9edbc4b3d8b99844b39f-text/javascript" charset="utf-8"></script>
+<script src="https://www.arizon.az/frontend/plugins/toastr/toastr.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/main.js?v27" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/backend/plugins/jquery-validation/jquery.validate.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/backend/plugins/jquery-validation/additional-methods.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/backend/plugins/jquery-form/jquery.form.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/auth-modals.js?v27" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/cart.js?v27" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/order.js?v27" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/mega-menu.js?v27" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/inputmask/dist/inputmask.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/inputmask/dist/jquery.inputmask.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/inputmask/dist/bindings/inputmask.binding.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/plugins/zoom/jquery.zoom.min.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/frontend/js/detail-view.js" type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script type="518d9edbc4b3d8b99844b39f-text/javascript" id="chaty-front-end-js-extra">
+    /* <![CDATA[ */
+    var chaty_settings = {"object_settings":{"isPRO":0,"pending_messages":"off","cht_cta_bg_color":"#ffffff","cht_cta_text_color":"rgb(17, 14, 183)","click_setting":"all_time","number_of_messages":"1","number_color":"#ffffff","number_bg_color":"#dd0000","position":"left","social":[{"val":"994507779545","default_icon":"<svg class=\"ico_d \" width=\"39\" height=\"39\" viewBox=\"0 0 39 39\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" style=\"transform: rotate(0deg);\"><circle class=\"color-element\" cx=\"19.4395\" cy=\"19.4395\" r=\"19.4395\" fill=\"#49E670\"\/><path d=\"M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 2.13001e-06 4.39053 2.13001e-06 2.92702C2.13001e-06 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 1.01506e-06 2.23348 1.01506e-06C2.37307 1.01506e-06 2.51267 1.01506e-06 2.65226 1.01506e-06C2.93144 1.01506e-06 3.21063 -2.02219e-06 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z\" transform=\"translate(12.9597 12.9597)\" fill=\"#FAFAFA\"\/><path d=\"M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z\" transform=\"translate(7.7758 7.77582)\" fill=\"white\" stroke=\"white\" stroke-width=\"0.2\"\/><\/svg>","bg_color":"#49E670","rbg_color":"73,230,112","title":"","img_url":"","social_channel":"whatsapp","channel_type":"whatsapp","href_url":"javascript:;","desktop_target":"_blank","mobile_target":"","qr_code_image":"","channel":"Whatsapp","is_mobile":1,"is_desktop":1,"mobile_url":"javascript:;","on_click":"","has_font":0,"popup_html":"<div class='chaty-whatsapp-popup'><span class='default-value' style='display:none'><\/span><span class='default-msg-value' style='display:none'>&lt;p&gt;Salam siz\u0259 nec\u0259 k\u00f6m\u0259k ed\u0259 bil\u0259rik? :)&lt;\/p&gt;<\/span><span class='default-msg-phone' style='display:none'>994507779545<\/span><div class='chaty-whatsapp-body'><div role='button' class='close-chaty-popup is-whatsapp-btn'><div class='chaty-close-button'><\/div><\/div><div class='chaty-whatsapp-message'><\/div><\/div><div class='chaty-whatsapp-footer'><form class='whatsapp-chaty-form' autocomplete='off' target='_blank' action='https:\/\/wa.me\/994507779545' method='get'><div class='chaty-whatsapp-field'><input autocomplete='off' class='chaty-whatsapp-msg' name='text' value='' \/><\/div><input type='hidden' name='phone' class='chaty-whatsapp-phone' value='' \/><input type='hidden' class='is-default-open' value='0' \/><input type='hidden' class='channel-id' value='cht-channel-0' \/><button type='submit' class='chaty-whatsapp-submit-btn'><svg xmlns='http:\/\/www.w3.org\/2000\/svg' viewBox='0 0 24 24' width='24' height='24'><path fill='#ffffff' d='M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z'><\/path><\/svg><\/button><div style='clear:both'><\/div><\/form><\/div><\/div>","has_custom_popup":1,"is_default_open":0}],"pos_side":"right","bot":"25","side":"25","device":"desktop_active mobile_active","color":"#4F6ACA","rgb_color":"79,106,202","widget_size":"54","widget_type":"chat-bubble","widget_img":"","cta":"","active":"true","close_text":"Ba\u011fla","analytics":0,"save_user_clicks":0,"close_img":"","is_mobile":0,"animation_class":"waggle","time_trigger":"yes","trigger_time":"0","exit_intent":"no","on_page_scroll":"no","page_scroll":"0","gmt":"","display_conditions":0,"display_rules":[],"display_state":"click","has_close_button":"yes","mode":"vertical"}};
+    /* ]]> */
+</script>
+<script type="518d9edbc4b3d8b99844b39f-text/javascript" src="https://www.arizon.az/frontend/wpchatplugin/wpchat.js" id="chaty-front-end-js"></script>
+<script src="http://code-eu1.jivosite.com/widget/ifoWQoNcog" async type="518d9edbc4b3d8b99844b39f-text/javascript"></script>
+<script src="https://www.arizon.az/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="518d9edbc4b3d8b99844b39f-|49" defer></script>

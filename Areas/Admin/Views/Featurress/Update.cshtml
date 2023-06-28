@@ -1,0 +1,61 @@
+﻿@using FinalArizon.ViewModel;
+
+
+@model FeatureUpdateVM
+<div class="card-body">
+    <form class="forms-sample" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label asp-for="AboutProduct"></label>
+            <input asp-for="AboutProduct" class="form-control">
+            <span asp-validation-for="AboutProduct"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BrandName"></label>
+            <input asp-for="BrandName" class="form-control" >
+            <span asp-validation-for="BrandName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModelName"></label>
+            <input asp-for="ModelName" class="form-control" >
+            <span asp-validation-for="ModelName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Vol"></label>
+            <input asp-for="Vol" class="form-control" >
+            <span asp-validation-for="Vol"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Tension"></label>
+            <input asp-for="Tension" class="form-control" >
+            <span asp-validation-for="Tension"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Size"></label>
+            <input asp-for="Size" class="form-control" >
+            <span asp-validation-for="Size"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Weight"></label>
+            <input asp-for="Weight" class="form-control" >
+            <span asp-validation-for="Weight"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductId"></label>
+            <select asp-for="ProductId" class="form-control">
+                <option value="">Seçiniz</option>
+                @foreach (var product in ViewBag.Products)
+                {
+                    <option value="@product.Value">@product.Text</option>
+                }
+            </select>
+            <span asp-validation-for="ProductId"></span>
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button asp-controller="Featurress" asp-action="Index" class="btn btn-light">Cancel</button>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+﻿@using FinalArizon.ViewModel;
+
+
+@model SliderUpdateVM
+<div class="card-body">
+    <form class="forms-sample" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label asp-for="Isactive"></label>
+            <div>
+                <input asp-for="Isactive" type="checkbox" value="true">
+                <label>True</label>
+            </div>
+            <div>
+                <input asp-for="Isactive" type="checkbox" value="false">
+                <label>False</label>
+            </div>
+            <span asp-validation-for="Isactive"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" class="form-control" asp-format="Photo">
+            <span asp-validation-for="Photo"></span>
+        </div>
+
+
+
+
+
+       
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button asp-controller="Slider" asp-action="Index" class="btn btn-light">Cancel</button>
+    </form>
+</div>

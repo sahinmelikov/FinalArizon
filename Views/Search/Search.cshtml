@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FinalArizon.Models.Product>
+
+<main>
+    <div class="menu-page">
+        <div class="container">
+            <div class="menu-link">
+                <a asp-controller="Home" asp-action="Index">Ana səhifə / </a>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-12">
+                    <div class="row" id="products-grid">
+
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <div class="col-6 col-sm-3 col-lg-2">
+                                    <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                                        <div class="product-item" style="position: relative;">
+                                            <div class="product-img img-container">
+                                                <img src="~/RootAllPictures/img/@item.ImagePath">
+                                                <div class="stamp__container">
+                                                    <span class="new-product">
+                                                        @{
+                                                            int count = (int)(100 - (item.DiscountPrice * 100 / item.Price));
+                                                        }
+
+                                                        @count%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail">
+                                                <div class="text d-flex" style="position: absolute; top: 5px; left: 5px;">
+                                                    <div class="discount"> -10% </div>
+                                                </div>
+                                                <div class="price">
+                                                    @item.DiscountPrice<i class="icon-azn">M</i>
+                                                    <del style="text-decoration: line-through; opacity: .5;">
+                                                        @item.Price <i class="icon-azn">M</i>
+                                                    </del>
+                                                </div>
+                                                <p>@item.Name</p>
+                                                <div class="information"> @item.Description </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No results found.</p>
+                        }
+
+                    </div>
+                </div>
+                <div class="more text-center mt-5 products-footer">
+                    <button class="next-btn" data-page="3">Daha çox</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

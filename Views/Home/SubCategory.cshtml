@@ -1,0 +1,99 @@
+﻿@using FinalArizon.ViewModel;
+@model HomeVM
+@{
+    double Count;
+}
+
+<main>
+    <div class="menu-page">
+        <div class="container">
+            <div class="menu-link"><a href="#">Ana səhifə / </a><a>Elektronika</a></div>
+            <div class="row">
+                <div class="col-12 col-sm-4 col-lg-2">
+                    <div class="categories">
+                        <h3>Kateqoriyalar</h3>
+                        <hr class="mb-0 mt-1">
+                        <div class="category-menu">
+                            <ul class="nav nav-list w-100">
+                                @foreach (var item in Model.ParentsCategories)
+                                {
+
+                                    <li class="accordion-item w-100">
+                                        <label class="tree-toggler accordion-button">@item.Name</label>
+                                        @foreach (var item1 in item.Models)
+                                        {
+                                            <ul class="nav nav-list tree accordion-body" style="display: none;">
+                                                <a asp-controller="Home" asp-action="SubCategory" asp-route-modelId="@item1.Id">
+                                                <li> @item1.Name</li>
+
+                                                </a>
+                                            </ul>
+                                        }
+
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                   @* <div class="searchs">
+                        <h3>Ən çox axtarılanlar</h3>
+                        <hr class="mb-0">
+                        <div class="tags">
+                            <a href="#"><div class="tag-item">Fitness</div></a>
+                            <a href="#"><div class="tag-item">Yoga &amp; Pilates</div></a>
+                            <a href="#"><div class="tag-item">Uzguculuk</div></a>
+                            <a href="#"><div class="tag-item">Ev &amp; Yasam</div></a>
+                            <a href="#"><div class="tag-item">Kammp</div></a>
+                            <a href="#"><div class="tag-item">Uzguculuk</div></a>
+                            <a href="#"><div class="tag-item">Fit</div></a>
+                            <a href="#"><div class="tag-item">Kammp</div></a>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="col-12 col-sm-8 col-lg-10">
+                    <div class="row" id="products-grid">
+                        @foreach (var item in Model.Products)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                                    <div class="product-item bg-white" style="position: relative; border-radius: 10px">
+                                        <div class="product-img img-container">
+                                            <img src="~/RootAllPictures/img/@item.ImagePath">
+                                            <div class="stamp__container">
+                                                <span class="delivery-product">
+                                                    @{
+                                                        Count = (int)(100 - (@item.DiscountPrice * 100 / @item.Price));
+                                                    }
+
+
+                                                    @Count%
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail p-2">
+                                            <div class="text d-flex" style="position: absolute; top: 5px; right: 0px;">
+                                            </div>
+                                            <div class="price">
+                                                @item.DiscountPrice<i class="icon-azn">M</i>
+                                            </div>
+                                            <div class="information" style="line-height: 18px;">
+                                                @item.Description
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+                <div class="more text-center mt-5 products-footer">
+                    <button class="next-btn" data-page="1">Daha çox</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
