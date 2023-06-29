@@ -10321,11 +10321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sahin\\Desktop\\ARIZONA1\\FinalArizon.csproj",
+      "projectUniqueName": "C:\\Users\\sahin\\Desktop\\Yeni qovluq\\FinalArizon.csproj",
       "projectName": "FinalArizon",
-      "projectPath": "C:\\Users\\sahin\\Desktop\\ARIZONA1\\FinalArizon.csproj",
+      "projectPath": "C:\\Users\\sahin\\Desktop\\Yeni qovluq\\FinalArizon.csproj",
       "packagesPath": "C:\\Users\\sahin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sahin\\Desktop\\ARIZONA1\\obj\\",
+      "outputPath": "C:\\Users\\sahin\\Desktop\\Yeni qovluq\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

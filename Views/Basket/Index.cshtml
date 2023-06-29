@@ -15,75 +15,7 @@
 }
 
 
-@*<script>
-    function addToBasket() {
-        var productId = document.getElementById('addToBasketButton').getAttribute('data-product-id');
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '@Url.Action("AddBasket", "BAsket")', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var basketItemCount = JSON.parse(xhr.responseText);
-                document.getElementById('basketItemCount').textContent = basketItemCount;
-            }
-        };
-        xhr.send('id=' + productId);
-    }
-</script>*@
-
-
-@*
-    <script>
-        $(function () {
-            $(".arttir").click(function () {
-                var Id = $(this).data("id");
-                var Id = $("#miktar_" + Id).text();
-                var DiscountPrice = $("#fiyat_" + Id).text();
-
-                ProductCount++;
-                DiscountPrice = parseFloat(DiscountPrice) + 10; // Fiyatı artırmak için 10 birim ekleyin (örneğin).
-
-                $("#miktar_" + Id).text(ProductCount);
-                $("#fiyat_" + Id).text(DiscountPrice.toFixed(2)); // Fiyatı iki ondalık basamağa yuvarlayarak gösterin.
-            });
-        });
-    </script>
-
-<script>
-    $(function () {
-        $(".sil-link").click(function (e) {
-            e.preventDefault();
-            var url = $(this).attr("href");
-
-            // Silme işlemini onayla
-            if (confirm("Ürünü sepetten silmek istediğinize emin misiniz?")) {
-                // AJAX isteğiyle silme işlemini gerçekleştir
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    data: {},
-                    success: function (result) {
-                        // Sayfayı yenile
-                        location.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        // Hata durumunda kullanıcıya bilgi ver
-                        alert("Ürünü silerken bir hata oluştu.");
-                    }
-                });
-            }
-        });
-    });
-</script>
-<script>
-    const aa = document.querySelector(".aa")
-    const product = document.querySelector(".product")
-    aa.addEventListener("click", function () {
-
-        product.classList.remove("product")
-    })
-</script>*@
 
 <!DOCTYPE html>
 <html lang="az">
@@ -158,7 +90,7 @@
                             </div>
                             <form class="cart-selected-item-delete" action="@Url.Action("RemoveAllItemsFromBasket", "Basket")" method="post">
                                 <input type="hidden" name="_token" value="UVDsOAzAS7pK5VA0SyeTAexfoFziZCWSEiMvXcLP"> <input type="hidden" name="_method" value="DELETE"> <div class="trash-menu text-center" style="display: none;">
-                                    <p class="mb-3">Məhsulu səbətdən  sil
+                                    <p class="mb-3">Məhsulu səbətdən  sil></p>
 
                                         <button type="submit" class="button-bg">Bəli</button>
            

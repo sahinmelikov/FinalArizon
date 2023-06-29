@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rjQ9hMhjcNi7e+EQFHVhoNsZrZqTLzPBYZPGyntDWtGC4ImcO0ufGt161HsgaI4kK5Vh9iv1DqpP30tPaNrrbA==",
+  "dgSpecHash": "BKjaedTMuZRP1vVirNiu89KKZ4x09X+Ct6uDVr6EUeTzaDJNv1au/ehVsdoU8i5jADMlvcqCX0bW795i+ksmvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sahin\\Desktop\\ARIZONA1\\FinalArizon.csproj",
+  "projectFilePath": "C:\\Users\\sahin\\Desktop\\Yeni qovluq\\FinalArizon.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sahin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sahin\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

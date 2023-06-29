@@ -2,7 +2,8 @@
 {
     public class FeatureUpdateVM
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
+
         public string AboutProduct { get; set; }
         public string BrandName { get; set; }
         public string ModelName { get; set; }

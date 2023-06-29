@@ -1,5 +1,6 @@
 ﻿@using FinalArizon.ViewModel;
-@model ParentsMenuCreateVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ParentsMenuUpdateVM
 
 <div class="card-body">
     <form class="forms-sample" enctype="multipart/form-data" method="post">
@@ -8,8 +9,8 @@
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name"></span>
         </div>
-       
-       
+
+
         <div class="form-group">
             <label asp-for="Photo" class="control-label"></label>
             <input asp-for="Photo" type="file" class="form-control" />

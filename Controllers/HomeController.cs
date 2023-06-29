@@ -193,10 +193,7 @@ namespace FinalArizon.Controllers
             if (existingProduct != null)
             {
 
-                //existingProduct.Name = product.Name;
-                //existingProduct.Price = product.Price;
-                //existingProduct.ImagePath=product.ImagePath;
-                //existingProduct.Description = product.Description;
+               
                 existingProduct.ViewCount = product.ViewCount;
 
 

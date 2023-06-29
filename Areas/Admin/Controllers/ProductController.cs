@@ -85,14 +85,16 @@ namespace FinalArizon.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                List<Product> products = await _context.Products.ToListAsync();
-                List<SelectListItem> productItems = products.Select(p => new SelectListItem
+                List<Models.Model> models = _context.Models.Include(m => m.ParentsCategory).ToList();
+                List<SelectListItem> modelItems = models.Select(m => new SelectListItem
                 {
-                    Value = p.Id.ToString(),
-                    Text = p.Name
+                    Value = m.Id.ToString(),
+                    Text = $"{m.Name} - {m.ParentsCategory.Name}"
                 }).ToList();
 
-                ViewBag.Product = productItems;
+                ViewBag.Products = modelItems;
+
+              
 
                 return View(member);
             }
@@ -208,14 +210,14 @@ namespace FinalArizon.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                List<Models.Model> models = await _context.Models.ToListAsync();
-                List<SelectListItem> modelItems = models.Select(p => new SelectListItem
+                List<Models.Model> models = _context.Models.Include(m => m.ParentsCategory).ToList();
+                List<SelectListItem> modelItems = models.Select(m => new SelectListItem
                 {
-                    Value = p.Id.ToString(),
-                    Text = p.Name
+                    Value = m.Id.ToString(),
+                    Text = $"{m.Name} - {m.ParentsCategory.Name}"
                 }).ToList();
 
-                ViewBag.Models = modelItems;
+                ViewBag.Products = modelItems;
 
                 return View(updateVM);
             }

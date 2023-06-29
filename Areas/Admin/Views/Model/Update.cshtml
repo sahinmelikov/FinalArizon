@@ -14,13 +14,18 @@
             <label asp-for="ParentsCategoryId"></label>
             <select asp-for="ParentsCategoryId" class="form-control">
                 <option value="">Seçiniz</option>
-                @foreach (var product in ViewBag.Products)
+                @if (ViewBag.Products != null)
                 {
-                    <option value="@product.Value">@product.Text</option>
+                    foreach (var product in ViewBag.Products)
+                    {
+                        <option value="@product.Value">@product.Text</option>
+                    }
                 }
             </select>
             <span asp-validation-for="ParentsCategoryId"></span>
         </div>
+
+
         <button type="submit" class="btn btn-primary me-2">Submit</button>
         <button asp-controller="Model" asp-action="Index" class="btn btn-light">Cancel</button>
     </form>
