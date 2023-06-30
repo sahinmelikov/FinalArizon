@@ -158,7 +158,8 @@ namespace FinalArizon.Areas.Admin.Controllers
                 Dimensions = member.Dimensions,
                 ModelId = member.ModelId,
                 ProductQuantity = member.ProductQuantity,
-                ProductİmageColor = fileNameColor
+                ProductİmageColor = fileNameColor,
+                DateTimeValue = member.DateTimeValue
             };
 
             await _context.Products.AddAsync(product);

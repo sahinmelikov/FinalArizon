@@ -127,16 +127,40 @@ namespace FinalArizon.Controllers
                 if (action == "increment")
                 {
                     basketItem.Count++;
+
+                    // Ürün miktarını azalt
+                    Product product = _appDbContext.Products.FirstOrDefault(p => p.Id == productId);
+                    if (product != null)
+                    {
+                        product.ProductQuantity--;
+                        _appDbContext.SaveChanges();
+                    }
                 }
                 else if (action == "decrement")
                 {
                     if (basketItem.Count > 1)
                     {
                         basketItem.Count--;
+
+                        // Ürün miktarını artır
+                        Product product = _appDbContext.Products.FirstOrDefault(p => p.Id == productId);
+                        if (product != null)
+                        {
+                            product.ProductQuantity++;
+                            _appDbContext.SaveChanges();
+                        }
                     }
                     else
                     {
                         basketVMList.Remove(basketItem);
+
+                        // Ürünü geri ekle
+                        Product product = _appDbContext.Products.FirstOrDefault(p => p.Id == productId);
+                        if (product != null)
+                        {
+                            product.ProductQuantity++;
+                            _appDbContext.SaveChanges();
+                        }
                     }
                 }
             }
@@ -147,6 +171,8 @@ namespace FinalArizon.Controllers
 
             return RedirectToAction("Index", "Basket");
         }
+
+
         public IActionResult RemoveAllItemsFromBasket()
         {
             // Sepet öğelerini temizle

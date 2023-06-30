@@ -1,5 +1,6 @@
 ﻿using FinalArizon.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace FinalArizon.ViewModel
 {
@@ -25,7 +26,7 @@ namespace FinalArizon.ViewModel
         public int ProductQuantity { get; set; }   ///////BAzadaki MEhsullarin Sayi
         [Required]
         public int ModelId { get; set; }
-
+        public DateTime DateTimeValue { get; set; }
 
         [Required]
         public IFormFile Photo { get; set; }

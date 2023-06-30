@@ -16,7 +16,7 @@
         public int ProductQuantity { get; set; }   ///////BAzadaki MEhsullarin Sayi
        
         public string ProductİmageColor { get;set; }   ////////Producttun Rengi
-
+        public DateTime DateTimeValue { get; set; }
         public List<Feature> Features { get; set; }
         public Model Model { get; set; }
         public int ModelId { get; set; }

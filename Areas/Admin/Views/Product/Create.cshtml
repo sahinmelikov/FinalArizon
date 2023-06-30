@@ -45,6 +45,12 @@
             <span asp-validation-for="ProductQuantity"></span>
         </div>
         <div class="form-group">
+            <label asp-for="DateTimeValue"></label>
+            <input asp-for="DateTimeValue" class="form-control" asp-format="{0:yyyy-MM-dd HH:mm:ss}">
+            <span asp-validation-for="DateTimeValue"></span>
+        </div>
+
+        <div class="form-group">
             <label asp-for="ModelId"></label>
             <select asp-for="ModelId" class="form-control">
                 <option value="">Seçiniz</option>

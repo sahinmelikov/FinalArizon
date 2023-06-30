@@ -106,7 +106,7 @@ namespace FinalArizon.Areas.Admin.Controllers
 
         public IActionResult Update()
         {
-            return View("Update");
+            return View();
         }
 
 

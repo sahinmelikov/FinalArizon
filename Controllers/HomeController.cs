@@ -130,7 +130,7 @@ namespace FinalArizon.Controllers
 
 
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, int hours)
         {
             List<Product> productList = GetAllProducts();
 
@@ -138,21 +138,26 @@ namespace FinalArizon.Controllers
 
             if (selectedProduct != null)
             {
+                // Girilen saat sayısına göre geriye doğru bir zaman belirle
+                DateTime endTime = DateTime.Now.AddHours(-hours);
+                selectedProduct.DateTimeValue = endTime;
+
                 ViewBag.SelectedProductImageUrls = selectedProduct.ProductİmageColor
-          .Select(color => $"~/RootAllPictures/img/{color}.png")
-          .ToList();
+                    .Select(color => $"~/RootAllPictures/img/{color}.png")
+                    .ToList();
+
                 selectedProduct.ViewCount++;
                 UpdateProduct(selectedProduct);
 
                 HomeVM model = new HomeVM
                 {
-                    Features=_appDbContext.Features.OrderByDescending(d => d.Id).ToList(),
-                    Products = _appDbContext.Products.Include(d=>d. Features).OrderByDescending(d => d.Id).ToList(),
+                    Features = _appDbContext.Features.OrderByDescending(d => d.Id).ToList(),
+                    Products = _appDbContext.Products.Include(d => d.Features).OrderByDescending(d => d.Id).ToList(),
                     Sliders = _appDbContext.Sliders.OrderByDescending(d => d.Id).ToList(),
                     ParentsCategories = _appDbContext.ParentsCategories
                         .Include(d => d.Features)
-                        .Include(d=>d.Models)
-                        .OrderByDescending(d=>d.Id)
+                        .Include(d => d.Models)
+                        .OrderByDescending(d => d.Id)
                         .ToList(),
                     SelectedProduct = selectedProduct,
                     SameProductCodeProducts = productList.Where(p => p.ProductCode == selectedProduct.ProductCode).ToList()
@@ -166,6 +171,10 @@ namespace FinalArizon.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+
+
 
 
         public List<Product> GetAllProducts()

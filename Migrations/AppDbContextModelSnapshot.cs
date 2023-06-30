@@ -94,28 +94,6 @@ namespace FinalArizon.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("FinalArizon.Models.ChildCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ParentsCategoryId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentsCategoryId");
-
-                    b.ToTable("ChildCategories");
-                });
-
             modelBuilder.Entity("FinalArizon.Models.Feature", b =>
                 {
                     b.Property<int>("Id")
@@ -215,8 +193,8 @@ namespace FinalArizon.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ChildCategoryId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DateTimeValue")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Delivery")
                         .IsRequired()
@@ -261,8 +239,6 @@ namespace FinalArizon.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ChildCategoryId");
 
                     b.HasIndex("ModelId");
 
@@ -422,17 +398,6 @@ namespace FinalArizon.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("FinalArizon.Models.ChildCategory", b =>
-                {
-                    b.HasOne("FinalArizon.Models.ParentsCategory", "ParentsCategory")
-                        .WithMany()
-                        .HasForeignKey("ParentsCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ParentsCategory");
-                });
-
             modelBuilder.Entity("FinalArizon.Models.Feature", b =>
                 {
                     b.HasOne("FinalArizon.Models.ParentsCategory", null)
@@ -450,19 +415,17 @@ namespace FinalArizon.Migrations
 
             modelBuilder.Entity("FinalArizon.Models.Model", b =>
                 {
-                    b.HasOne("FinalArizon.Models.ParentsCategory", null)
+                    b.HasOne("FinalArizon.Models.ParentsCategory", "ParentsCategory")
                         .WithMany("Models")
                         .HasForeignKey("ParentsCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ParentsCategory");
                 });
 
             modelBuilder.Entity("FinalArizon.Models.Product", b =>
                 {
-                    b.HasOne("FinalArizon.Models.ChildCategory", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ChildCategoryId");
-
                     b.HasOne("FinalArizon.Models.Model", "Model")
                         .WithMany("Products")
                         .HasForeignKey("ModelId")
@@ -521,11 +484,6 @@ namespace FinalArizon.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("FinalArizon.Models.ChildCategory", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("FinalArizon.Models.Model", b =>
