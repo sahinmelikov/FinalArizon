@@ -141,10 +141,24 @@ namespace FinalArizon.Controllers
                 // Girilen saat sayısına göre geriye doğru bir zaman belirle
                 DateTime endTime = DateTime.Now.AddHours(-hours);
                 selectedProduct.DateTimeValue = endTime;
-
                 ViewBag.SelectedProductImageUrls = selectedProduct.ProductİmageColor
-                    .Select(color => $"~/RootAllPictures/img/{color}.png")
+                    .Select(color =>
+                    {
+                        string fileName = color.ToString(); // Renk adından baştaki ve sondaki boşlukları kaldırıyoruz, küçük harfe dönüştürüyoruz
+                        string extension = Path.GetExtension(fileName); // Uzantıyı alıyoruz
+                        fileName = Path.GetFileNameWithoutExtension(fileName); // Uzantısız dosya adını alıyoruz
+
+                        if (extension.ToLower() == ".png" && fileName.Length > 0)
+                        {
+                            return $"~/RootAllPictures/img/{fileName}.png"; // Doğru formatlı URL'yi oluşturuyoruz
+                        }
+
+                        return null; // Hatalı renk adı için null döndürüyoruz
+                    })
+                    .Where(url => url != null) // Hatalı renk adlarından kaynaklanan null değerleri filtreliyoruz
                     .ToList();
+
+
 
                 selectedProduct.ViewCount++;
                 UpdateProduct(selectedProduct);

@@ -280,14 +280,10 @@
                                   
                                    <div class="color d-inline-flex flex-wrap">
                                             <input type="radio" id="color448" class="d-none" name="data[color][]" value="" checked="">
-                                        <label class="overflow-hidden color-item " for="color448">
+                                        <label class="overflow-hidden color-item " for="">
+                                        
+                                                <img src="~/RootAllPictures/img/@ViewBag.SelectedProduct.ProductİmageColor">
 
-
-                                                @foreach (var color in ViewBag.SelectedProduct.ProductİmageColor)
-                                                {
-                                                    var imageUrl = $"~/RootAllPictures/img/{color}";
-                                                    <img src="@Url.Content(imageUrl)" class="w-100 h-100" title="@color">
-                                                }
                                         </label>
                                     </div><br> 
                                         
@@ -369,11 +365,15 @@
                         <h3>Endirimlər</h3>
                         <hr>
                         <div class="fltrs-wrppr hide-fltrs"><div class="fltr-cntnr-ttl-area">
-                            <div class="fltr-cntnr-ttl">Qiymet</div>
-                            <div class="i-dropdown-arrow transform"></div>
-                        </div><div><div class="fltr-srch-prc-rng"><input type="button" class="fltr-srch-prc-rng-input min" placeholder="En Az"><span class="fltr-srch-prc-rng-sprtr">-</span><input type="button" class="fltr-srch-prc-rng-input max" placeholder="En Çok"><button class="fltr-srch-prc-rng-srch" disabled=""></button></div></div><div class="fltrs"><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=0-50&amp;os=1"><div class="radio-button"></div>
-                            <div class="fltr-item-text">0Azn - 50 Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=50-200&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">50Azn - 200Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=200-250&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">200Azn - 250Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=250-400&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">250Azn - 400Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=400-900&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">400Azn - 900Azn</div></a><a class="fltr-item-wrppr" href="/sr?q=ucuz fiyat&amp;qt=ucuz fiyat&amp;st=ucuz fiyat&amp;prc=900-2500&amp;os=1"><div class="radio-button"></div><div class="fltr-item-text">900Azn - 2500Azn</div></a></div><div class="aggregation-seperator"><span></span></div></div>
-                    </div>
+                                <a> <p>0-50Azn</p></a>
+                                <a><p>50-150Azn</p></a>
+                                <a><p>150-250Azn</p></a>
+                                <a>    <p>250-500Azn</p></a>
+                                <a>  <p>500-1000Azn</p></a>
+                                <a>   <p>1000-2000Azn</p></a>
+</div><div class="aggregation-seperator"><span></span></div></div>
+                   
+                            </div>
                 </div>
                 <div class="col-12 col-sm-8 col-lg-10">
                     <div class="tabs">
